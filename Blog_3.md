@@ -1,9 +1,9 @@
-// Type guard is a pattern or technique in TypeScript that help to ensure type validation. Specially when if your variable type is multiple type.
-// TypeScript has various types of type guards.
-// 1. typeof Type Guard
-// It is generally used for primitive types such as string, number, boolean etc. Using typeof we can check whether a variable of a specific type.
+Type guard is a pattern or technique in TypeScript that help to ensure type validation. Specially when if your variable type is multiple type.
+TypeScript has various types of type guards.
 
-// Example_1:
+Example_1:( typeof )
+It is generally used for primitive types such as string, number, boolean etc. Using typeof we can check whether a variable of a specific type.
+
 function Student(num: string | number) {
 if (typeof num === "string") {
 console.log("this is string"); // যদি value string হয়
@@ -15,11 +15,10 @@ console.log("this is number"); // যদি value number হয়
 Student("Shariful islam"); // Output: String: this is string
 Student(10);
 
-// // it is usually used when you create an object and using instanceof,
-// // we can check if the object exists.
-// // The instanceof keyword is used to check the type of an object, specifically an instance of a class.
+Example_2:( instanceof )
+It is usually used when you create an object and using instanceof,
+we can check if the object exists.The instanceof keyword is used to check the type of an object, specifically an instance of a class.
 
-// Example_2:
 class Cat {
 getCat() {
 console.log("This is Cat!");
@@ -43,11 +42,11 @@ param.getCat();
 getResult(new Book());
 getResult(new Cat());
 
-// // The in operator is used to check whether a property exists within the object.
-// // It can be used when checking the presence of certain properties of an object.
-// In TypeScript, the in operator is used to check if a property exists on an object,
+Example:3( In )
+The in operator is used to check whether a property exists within the object.
+It can be used when checking the presence of certain properties of an object.
+In TypeScript, the in operator is used to check if a property exists on an object,
 
-======================Example_3=======================
 interface Cat {
 getCat(): void;
 }
@@ -76,10 +75,10 @@ param.getCat();
 getResult(new ThisCat());
 getResult(new ThisBook());
 
-===============example_4================
+Example:3( null or undefined )
 We can use typeguard nul or undefined to determine whether a variable is null or undefined and execute the correct code accordingly.
 
-// Example_1:
+Example_1:
 function Student(num: nul | undefined) {
 if (typeof num === "nul") {
 console.log("this is nul"); // যদি value null হয়
@@ -88,5 +87,5 @@ console.log("this is undefined"); // যদি value undefined হয়
 }
 }
 
-Student(null); //
+Student(null);
 Student(undifined);
